@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Demo</title>
+<meta name="description" content="GitHub Pages demo: book / course website">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0d1117; --bg2: #161b22; --bg3: #21262d;
+  --text: #c9d1d9; --text2: #8b949e; --heading: #f0f6fc;
+  --primary: #58a6ff; --primary-hover: #79c0ff;
+  --border: #30363d; --success: #3fb950; --warning: #d29922; --danger: #f85149;
+  --card-bg: #161b22; --shadow: 0 1px 3px rgba(0,0,0,.3);
+  --radius: 8px; --font: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;
+  --transition: .3s ease;
+}
+[data-theme="light"] {
+  --bg: #ffffff; --bg2: #f6f8fa; --bg3: #eaeef2;
+  --text: #24292f; --text2: #57606a; --heading: #1f2328;
+  --primary: #0969da; --primary-hover: #0550ae;
+  --border: #d0d7de; --card-bg: #ffffff; --shadow: 0 1px 3px rgba(0,0,0,.12);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font); background: var(--bg); color: var(--text);
+  line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column;
+  transition: background var(--transition), color var(--transition);
+}
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 24px; background: var(--bg2); border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px);
+  transition: background var(--transition);
+}
+.logo { font-size: 1.25rem; font-weight: 700; color: var(--heading); display: flex; align-items: center; gap: 8px; }
+.logo-icon { width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; }
+#theme-toggle {
+  background: var(--bg3); border: 1px solid var(--border); color: var(--text);
+  width: 40px; height: 40px; border-radius: var(--radius); cursor: pointer;
+  font-size: 18px; display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition);
+}
+#theme-toggle:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+main { flex: 1; max-width: 960px; margin: 0 auto; padding: 40px 24px; width: 100%; }
+footer {
+  text-align: center; padding: 24px; color: var(--text2);
+  border-top: 1px solid var(--border); font-size: .875rem;
+  transition: border-color var(--transition);
+}
+footer a { color: var(--primary); }
+.hero { text-align: center; padding: 60px 0 40px; }
+.hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--heading); margin-bottom: 16px; }
+.hero p { font-size: 1.15rem; color: var(--text2); max-width: 640px; margin: 0 auto 24px; }
+.btn {
+  display: inline-block; background: var(--primary); color: #fff; padding: 10px 24px;
+  border-radius: var(--radius); font-weight: 600; border: none; cursor: pointer;
+  transition: all var(--transition); font-size: .95rem;
+}
+.btn:hover { background: var(--primary-hover); text-decoration: none; }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.btn-outline:hover { background: var(--bg3); }
+.card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; transition: all var(--transition);
+}
+.card:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(88,166,255,.15); }
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.section-title { font-size: 1.5rem; font-weight: 700; color: var(--heading); margin: 40px 0 20px; }
+.tag {
+  display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: .8rem;
+  background: var(--bg3); color: var(--primary); border: 1px solid var(--border);
+}
+.badge {
+  display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: .75rem;
+  font-weight: 600;
+}
+.badge-green { background: rgba(63,185,80,.15); color: var(--success); }
+.badge-yellow { background: rgba(210,153,34,.15); color: var(--warning); }
+.badge-red { background: rgba(248,81,73,.15); color: var(--danger); }
+.badge-blue { background: rgba(88,166,255,.15); color: var(--primary); }
+</style>
+
+</head>
+<body>
+<nav>
+  <a href="/" class="logo"><span class="logo-icon">&#x25B6;</span>Book</a>
+  <button id="theme-toggle" aria-label="Toggle theme">&#x2600;</button>
+</nav>
+<main>
+  <section class="hero">
+    <h1>Book</h1>
+    <p>GitHub Pages demo: a book / course website with dark/light mode.</p>
+  </section>
+  
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px">
+  <div class="card" style="text-align:center;padding:48px 24px">
+    <div style="font-size:4rem;margin-bottom:16px">&#x1F4D6;</div>
+    <h2 style="color:var(--heading);font-size:1.5rem">Mastering TypeScript</h2>
+    <p style="color:var(--text2);margin:8px 0 16px">The Comprehensive Guide for Modern Developers</p>
+    <p style="color:var(--text2);font-size:.85rem">by Alex Rivera &middot; 450 pages &middot; 2nd Edition</p>
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap">
+      <a href="#" class="btn">&#x1F4E5; Download PDF</a>
+      <a href="#" class="btn btn-outline">&#x1F4D7; Buy on Amazon</a>
+    </div>
+  </div>
+  <div class="card">
+    <h3 style="color:var(--heading);margin-bottom:12px">About This Book</h3>
+    <p style="color:var(--text2);font-size:.9rem;margin-bottom:16px">From beginner to expert, this book covers everything you need to master TypeScript. Learn advanced types, generics, patterns, and real-world application architecture.</p>
+    <h3 style="color:var(--heading);margin-bottom:12px">What You'll Learn</h3>
+    <ul style="color:var(--text2);font-size:.875rem;margin-left:20px;display:flex;flex-direction:column;gap:6px">
+      <li>TypeScript fundamentals and advanced type system</li>
+      <li>Generic patterns and utility types</li>
+      <li>Module resolution and project configuration</li>
+      <li>Testing strategies for TypeScript projects</li>
+      <li>Migrating JavaScript to TypeScript</li>
+    </ul>
+  </div>
+</div>
+<h2 class="section-title">Table of Contents</h2>
+<section style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+  <div class="card" style="padding:16px"><h3 style="color:var(--heading);font-size:.95rem">1. Getting Started</h3><p style="color:var(--text2);font-size:.8rem">Installation, configuration, first program</p></div>
+  <div class="card" style="padding:16px"><h3 style="color:var(--heading);font-size:.95rem">2. Basic Types</h3><p style="color:var(--text2);font-size:.8rem">Primitives, arrays, tuples, enums</p></div>
+  <div class="card" style="padding:16px"><h3 style="color:var(--heading);font-size:.95rem">3. Functions</h3><p style="color:var(--text2);font-size:.8rem">Parameter types, return types, overloads</p></div>
+  <div class="card" style="padding:16px"><h3 style="color:var(--heading);font-size:.95rem">4. Generics</h3><p style="color:var(--text2);font-size:.8rem">Generic functions, constraints, mapped types</p></div>
+  <div class="card" style="padding:16px"><h3 style="color:var(--heading);font-size:.95rem">5. Advanced Types</h3><p style="color:var(--text2);font-size:.8rem">Conditional, template literal, recursive types</p></div>
+  <div class="card" style="padding:16px"><h3 style="color:var(--heading);font-size:.95rem">6. Real-World Patterns</h3><p style="color:var(--text2);font-size:.8rem">Dependency injection, factories, builders</p></div>
+</section>
+<h2 class="section-title">Reader Reviews</h2>
+<section class="grid">
+  <div class="card"><p style="font-size:1.2rem;margin-bottom:8px">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</p><p style="font-size:.85rem;color:var(--text2)">"The best TypeScript book I've ever read. The generics chapter alone is worth the price."</p><p style="font-size:.8rem;color:var(--text2);margin-top:8px">&#x2014; Sarah K.</p></div>
+  <div class="card"><p style="font-size:1.2rem;margin-bottom:8px">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</p><p style="font-size:.85rem;color:var(--text2)">"Clear, practical examples. Great for both beginners and experienced devs."</p><p style="font-size:.8rem;color:var(--text2);margin-top:8px">&#x2014; Marcus J.</p></div>
+</section>
+</main>
+<footer>
+  <p>Powered by <a href="https://pages.github.com">GitHub Pages</a> &mdash; <a href="https://github.com/CowxLabs/book">Source</a></p>
+</footer>
+<script>
+const toggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+const stored = localStorage.getItem('theme');
+if (stored) html.setAttribute('data-theme', stored);
+else html.setAttribute('data-theme', 'dark');
+toggle.textContent = html.getAttribute('data-theme') === 'dark' ? '\u2600' : '\uD83C\uDF19';
+toggle.addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  toggle.textContent = next === 'dark' ? '\u2600' : '\uD83C\uDF19';
+});
+</script>
+</body>
+</html>
